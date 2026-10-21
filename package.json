@@ -1,0 +1,87 @@
+{
+  "name": "expodeck",
+  "displayName": "ExpoDeck",
+  "description": "A quick command deck to manage Expo projects in VS Code",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "expodeck.runCommand",
+        "title": "Run in Terminal",
+        "icon": "$(play)"
+      },
+      {
+        "command": "expodeck.copyCommand",
+        "title": "Copy Command",
+        "icon": "$(copy)"
+      },
+      {
+        "command": "expodeck.openQuickPick",
+        "title": "ExpoDeck: Open Quick Search Menu"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "expodeck.openQuickPick",
+        "key": "ctrl+alt+e",
+        "mac": "ctrl+cmd+e"
+      }
+    ],
+    "menus": {
+      "view/item/context": [
+        {
+          "command": "expodeck.runCommand",
+          "when": "view == expodeck-commands-view && !isFolder",
+          "group": "inline@1"
+        },
+        {
+          "command": "expodeck.copyCommand",
+          "when": "view == expodeck-commands-view && !isFolder",
+          "group": "inline@2"
+        }
+      ]
+    },
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "expodeck-sidebar",
+          "title": "ExpoDeck",
+          "icon": "$(rocket)"
+        }
+      ]
+    },
+    "views": {
+      "expodeck-sidebar": [
+        {
+          "id": "expodeck-commands-view",
+          "name": "Expo Commands"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && npm run lint && node esbuild.js",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && npm run lint && node esbuild.js --production",
+    "check-types": "tsc --noEmit",
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.80.0",
+    "@types/node": "24.x",
+    "typescript": "^5.0.0",
+    "esbuild": "^0.28.1",
+    "npm-run-all": "^4.1.5"
+  }
+}
