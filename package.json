@@ -3,13 +3,13 @@
   "displayName": "ExpoDeck",
   "description": "A quick command deck to manage Expo projects in VS Code",
   "version": "0.0.1",
+  "publisher": "jonesj",
   "engines": {
     "vscode": "^1.80.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
   "main": "./dist/extension.js",
   "contributes": {
     "commands": [
@@ -24,6 +24,16 @@
         "icon": "$(copy)"
       },
       {
+        "command": "expodeck.addCustomCommand",
+        "title": "ExpoDeck: Add Custom Command",
+        "icon": "$(add)"
+      },
+      {
+        "command": "expodeck.deleteCustomCommand",
+        "title": "Delete Custom Command",
+        "icon": "$(trash)"
+      },
+      {
         "command": "expodeck.openQuickPick",
         "title": "ExpoDeck: Open Quick Search Menu"
       }
@@ -36,18 +46,54 @@
       }
     ],
     "menus": {
+      "view/title": [
+        {
+          "command": "expodeck.addCustomCommand",
+          "when": "view == expodeck-commands-view",
+          "group": "navigation"
+        }
+      ],
       "view/item/context": [
         {
           "command": "expodeck.runCommand",
-          "when": "view == expodeck-commands-view && !isFolder",
+          "when": "view == expodeck-commands-view",
           "group": "inline@1"
         },
         {
           "command": "expodeck.copyCommand",
-          "when": "view == expodeck-commands-view && !isFolder",
+          "when": "view == expodeck-commands-view",
           "group": "inline@2"
+        },
+        {
+          "command": "expodeck.deleteCustomCommand",
+          "when": "view == expodeck-commands-view && viewItem == customExpoCommand",
+          "group": "inline@3"
         }
       ]
+    },
+    "configuration": {
+      "title": "ExpoDeck",
+      "properties": {
+        "expodeck.customCommands": {
+          "type": "array",
+          "default": [],
+          "description": "User-added custom Expo/React Native commands.",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": {
+                "type": "string"
+              },
+              "commandText": {
+                "type": "string"
+              },
+              "descriptionText": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
     },
     "viewsContainers": {
       "activitybar": [
@@ -62,7 +108,8 @@
       "expodeck-sidebar": [
         {
           "id": "expodeck-commands-view",
-          "name": "Expo Commands"
+          "name": "Expo Commands",
+          "icon": "$(terminal)"
         }
       ]
     }
