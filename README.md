@@ -1,78 +1,60 @@
-Kandipa mapla! Unga **ExpoDeck** extension-kku oru professional-aana, clean-ana GitHub README markdown content inga therenchurkuken. Athai copy panni unga project root folder-la `README.md` nu save panikalam:
-
-````markdown
 # 🚀 ExpoDeck
 
-**ExpoDeck** is a lightweight, high-performance Visual Studio Code extension designed for Expo and React Native developers. It streamlines your local development workflow by replacing complex terminal commands with a clean Sidebar command deck, inline quick actions, and a lightning-fast Quick Search menu.
+**ExpoDeck** is a lightweight Visual Studio Code extension designed for Expo and React Native developers. It simplifies everyday development workflows with a dedicated Sidebar Command Deck, quick command search, and convenient run and copy actions.
 
----
+## 👀 Extension Preview
+
+![ExpoDeck Extension Preview](media/2.png)
+![ExpoDeck Extension Preview](media/6.png)
+![ExpoDeck Extension Preview](media/8.png)
+
+_ExpoDeck — Your Expo development commands, all in one place._
 
 ## ✨ Features
 
-- **🚀 Interactive Sidebar Command Deck:** Access all essential Expo commands right from your VS Code Activity Bar.
-- **⚡ Quick Search Menu (`Ctrl + Alt + E`):** Instantly filter and execute any Expo command using VS Code's Quick Pick interface.
-- **▶️ Inline Run & Copy Actions:** Run commands directly in a dedicated `ExpoDeck` terminal or copy them to your clipboard with a single click.
-- **📂 Modular Architecture:** Clean command management supporting seamless expansion of custom workflows.
-- **📝 Rich Tooltips:** Hover over any command in the sidebar to view detailed descriptions and syntax.
-
----
+- 🚀 **Interactive Sidebar Command Deck** — Access essential Expo commands directly from the VS Code Activity Bar.
+- ⚡ **Quick Search Menu** — Press `Ctrl + Alt + E` to find commands quickly.
+- ▶️ **Run & Copy Actions** — Execute commands in a dedicated ExpoDeck terminal or copy them to the clipboard.
+- 📂 **Modular Architecture** — Keep command management organized and make future expansion easier.
+- 📝 **Rich Tooltips** — View command descriptions and syntax when hovering over sidebar items.
 
 ## 🛠️ Supported Commands
 
-| Command                 | Action / Description                                                 |
-| :---------------------- | :------------------------------------------------------------------- |
-| **Start Dev Server**    | Start the local development server (`npx expo start`)                |
-| **Start (Clear Cache)** | Clear Metro bundler cache & start (`npx expo start --clear`)         |
-| **Open Android**        | Launch directly in the Android emulator (`npx expo start --android`) |
-| **Open iOS**            | Launch directly in the iOS simulator (`npx expo start --ios`)        |
-| **Open Web**            | Open project preview in browser (`npx expo start --web`)             |
-| **Run Native Android**  | Build & run the native Android app (`npx expo run:android`)          |
-| **Run Native iOS**      | Build & run the native iOS app (`npx expo run:ios`)                  |
-| **Install Package**     | Install an Expo-compatible library (`npx expo install <package>`)    |
-| **Prebuild Native**     | Generate native Android/iOS directories (`npx expo prebuild`)        |
-| **Doctor Check**        | Diagnose version mismatches & issues (`npx expo doctor`)             |
-| **Export Bundle**       | Export production bundle for hosting (`npx expo export`)             |
-
----
+| Command             | Description                                | Terminal Command             |
+| ------------------- | ------------------------------------------ | ---------------------------- |
+| Start Dev Server    | Start the Expo development server          | `npx expo start`             |
+| Start (Clear Cache) | Clear the Metro cache and start the server | `npx expo start --clear`     |
+| Open Android        | Start Expo with Android                    | `npx expo start --android`   |
+| Open iOS            | Start Expo with iOS                        | `npx expo start --ios`       |
+| Open Web            | Start the web version                      | `npx expo start --web`       |
+| Run Native Android  | Build and run the Android app              | `npx expo run:android`       |
+| Run Native iOS      | Build and run the iOS app                  | `npx expo run:ios`           |
+| Install Package     | Install a compatible package               | `npx expo install <package>` |
+| Prebuild Native     | Generate native project directories        | `npx expo prebuild`          |
+| Doctor Check        | Diagnose project configuration issues      | `npx expo doctor`            |
+| Export Bundle       | Export the app for production              | `npx expo export`            |
 
 ## ⌨️ Keyboard Shortcuts
 
-- **`Ctrl + Alt + E`** (Windows/Linux) / **`Ctrl + Cmd + E`** (Mac): Open the Quick Search command menu.
+| Action            | Shortcut                                |
+| ----------------- | --------------------------------------- |
+| Open Quick Search | `Ctrl + Alt + E` (Windows/Linux)        |
+| Open Quick Search | `Ctrl + Cmd + E` (macOS, if configured) |
 
----
+_Note: The macOS shortcut works only if it is configured in the extension._
 
-## 🚀 Getting Started
+## 🌐 Marketplace
 
-1. Clone or download this repository.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-````
+ExpoDeck is built to make common Expo development commands easier to discover and execute from within Visual Studio Code.
 
-3. Press **F5** in VS Code to compile and open a new Extension Development Host window.
+_Marketplace link: Add your published extension URL here once it is available._
 
----
+## 👨‍💻 Author
 
-## 📦 Building & Publishing
+**Jones J.**
 
-To package the extension into a `.vsix` file for distribution or publishing:
-
-```bash
-npm install -g @vscode/vsce
-vsce package
-
-```
-
----
-
-## 👥 Authors
-
-- **Jones J.**
-- **Surya Perumal Jeyapandi**
-
----
+- GitHub: [@jones2006](https://github.com/jones2006)
 
 ## 📄 License
 
-This project is open-source and available under the [MIT License](https://www.google.com/search?q=LICENSE).
+This project is licensed under the [MIT License](LICENSE).
